@@ -3,7 +3,8 @@
 export type NeatoOptionsType = {
   port: number,
   webpack?: Object,
-  pages?: string[]
+  pages?: string[],
+  vendor?: string[]
 }
 
 export type NeatoConfigType = {

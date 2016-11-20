@@ -1,26 +1,61 @@
 exports[`webpack/pages works 1`] = `
 Object {
+  "entry": Object {
+    "index": "./index",
+    "other-page": "./other-page",
+    "vendor": Array [],
+  },
   "output": Object {
-    "plugins": Array [
-      HtmlWebpackPlugin {
-        "options": Object {
-          "cache": true,
-          "chunks": "all",
-          "compile": true,
-          "excludeChunks": Array [],
-          "favicon": false,
-          "filename": "index.html",
-          "hash": true,
-          "inject": true,
-          "minify": false,
-          "showErrors": true,
-          "template": "index.html",
-          "title": "Webpack App",
-          "xhtml": false,
-        },
-      },
-    ],
     "publicPath": "/",
   },
+  "plugins": Array [
+    HtmlWebpackPlugin {
+      "options": Object {
+        "cache": true,
+        "chunks": "all",
+        "compile": true,
+        "excludeChunks": Array [],
+        "favicon": false,
+        "filename": "index.html",
+        "hash": true,
+        "inject": true,
+        "minify": false,
+        "showErrors": true,
+        "template": "index.html",
+        "title": "Webpack App",
+        "xhtml": false,
+      },
+    },
+    HtmlWebpackPlugin {
+      "options": Object {
+        "cache": true,
+        "chunks": "all",
+        "compile": true,
+        "excludeChunks": Array [],
+        "favicon": false,
+        "filename": "other-page.html",
+        "hash": true,
+        "inject": true,
+        "minify": false,
+        "showErrors": true,
+        "template": "other-page.html",
+        "title": "Webpack App",
+        "xhtml": false,
+      },
+    },
+    CommonsChunkPlugin {
+      "async": undefined,
+      "chunkNames": Array [
+        "shared",
+        "vendor",
+        "webpack",
+      ],
+      "filenameTemplate": undefined,
+      "ident": "/home/sean/code/neato/node_modules/webpack/lib/optimize/CommonsChunkPlugin.js0",
+      "minChunks": undefined,
+      "minSize": undefined,
+      "selectedChunks": undefined,
+    },
+  ],
 }
 `;

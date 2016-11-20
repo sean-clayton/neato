@@ -1,15 +1,16 @@
 // @flow
 
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { optimize } from 'webpack'
 
 export default (neatoConfig: NeatoConfigType): Object => {
   const chunks = ['shared', 'vendor', 'webpack']
-  return {
-    output: {
-      publicPath: '/',
-      plugins: neatoConfig.options.pages
+
+  const configurePlugins = (): any[] => {
+    return [
+      ...(neatoConfig.options.pages
         ? neatoConfig.options.pages.map((page: string) => {
-          if (chunks.indexOf(page) !== -1) { throw new Error(`Reserved name ${page}!`) }
+          if (chunks.indexOf(page) !== -1) { return new Error(`Reserved name ${page}!`) }
           return new HtmlWebpackPlugin({
             template: `${page}.html`,
             hash: true,
@@ -17,6 +18,34 @@ export default (neatoConfig: NeatoConfigType): Object => {
           })
         })
         : []
-    }
+      ),
+      new optimize.CommonsChunkPlugin({
+        name: chunks
+      })
+    ]
   }
+
+  const entry = {
+    ...(neatoConfig.options.pages
+      ? neatoConfig.options.pages
+        .map((page: string) => ({
+          [page]: `./${page}`
+        }))
+        .reduce((a, b) => ({
+          ...a,
+          ...b
+        }))
+      : {}),
+    vendor: neatoConfig.options.vendor || []
+  }
+
+  return neatoConfig.options.pages && neatoConfig.options.pages.length === 0
+    ? new Error('Could not find page. Did you forget to set the `pages` option in your neato.config.js file?')
+    : {
+      output: {
+        publicPath: '/'
+      },
+      plugins: configurePlugins(),
+      entry
+    }
 }

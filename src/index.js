@@ -1,7 +1,7 @@
 // @flow
 
 import path from 'path'
-import { webpackConfig } from './webpack/webpack'
+import webpackConfig from './webpack/webpack'
 import cli from 'cli/cli'
 
 const defaultOptions: NeatoOptionsType = {

@@ -6,7 +6,7 @@ describe('webpack/pages', () => {
   it('works', () => {
     const neatoMock = {
       options: {
-        pages: ['index']
+        pages: ['index', 'other-page']
       }
     }
     expect(pages(neatoMock)).toMatchSnapshot()

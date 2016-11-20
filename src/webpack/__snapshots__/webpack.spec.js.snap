@@ -1,30 +1,94 @@
+exports[`webpack Accepts a custom config 1`] = `
+Object {
+  "devtool": "source-map",
+  "entry": Object {
+    "index": "./index",
+    "vendor": Array [],
+  },
+  "output": Object {
+    "publicPath": "https://cdn.com/",
+  },
+  "plugins": Array [
+    NoErrorsPlugin {},
+    HtmlWebpackPlugin {
+      "options": Object {
+        "cache": true,
+        "chunks": "all",
+        "compile": true,
+        "excludeChunks": Array [],
+        "favicon": false,
+        "filename": "index.html",
+        "hash": true,
+        "inject": true,
+        "minify": false,
+        "showErrors": true,
+        "template": "index.html",
+        "title": "Webpack App",
+        "xhtml": false,
+      },
+    },
+    CommonsChunkPlugin {
+      "async": undefined,
+      "chunkNames": Array [
+        "shared",
+        "vendor",
+        "webpack",
+      ],
+      "filenameTemplate": undefined,
+      "ident": "/home/sean/code/neato/node_modules/webpack/lib/optimize/CommonsChunkPlugin.js1",
+      "minChunks": undefined,
+      "minSize": undefined,
+      "selectedChunks": undefined,
+    },
+  ],
+  "resolve": Object {
+    "modules": Array [],
+  },
+}
+`;
+
 exports[`webpack Creates a webpack config object 1`] = `
 Object {
   "devtool": "source-map",
+  "entry": Object {
+    "index": "./index",
+    "vendor": Array [],
+  },
   "output": Object {
-    "plugins": Array [
-      HtmlWebpackPlugin {
-        "options": Object {
-          "cache": true,
-          "chunks": "all",
-          "compile": true,
-          "excludeChunks": Array [],
-          "favicon": false,
-          "filename": "index.html",
-          "hash": true,
-          "inject": true,
-          "minify": false,
-          "showErrors": true,
-          "template": "index.html",
-          "title": "Webpack App",
-          "xhtml": false,
-        },
-      },
-    ],
     "publicPath": "/",
   },
   "plugins": Array [
     NoErrorsPlugin {},
+    HtmlWebpackPlugin {
+      "options": Object {
+        "cache": true,
+        "chunks": "all",
+        "compile": true,
+        "excludeChunks": Array [],
+        "favicon": false,
+        "filename": "index.html",
+        "hash": true,
+        "inject": true,
+        "minify": false,
+        "showErrors": true,
+        "template": "index.html",
+        "title": "Webpack App",
+        "xhtml": false,
+      },
+    },
+    CommonsChunkPlugin {
+      "async": undefined,
+      "chunkNames": Array [
+        "shared",
+        "vendor",
+        "webpack",
+      ],
+      "filenameTemplate": undefined,
+      "ident": "/home/sean/code/neato/node_modules/webpack/lib/optimize/CommonsChunkPlugin.js0",
+      "minChunks": undefined,
+      "minSize": undefined,
+      "selectedChunks": undefined,
+    },
   ],
   "resolve": Object {
     "modules": Array [],
