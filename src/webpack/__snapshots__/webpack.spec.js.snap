@@ -1,0 +1,33 @@
+exports[`webpack Creates a webpack config object 1`] = `
+Object {
+  "devtool": "source-map",
+  "output": Object {
+    "plugins": Array [
+      HtmlWebpackPlugin {
+        "options": Object {
+          "cache": true,
+          "chunks": "all",
+          "compile": true,
+          "excludeChunks": Array [],
+          "favicon": false,
+          "filename": "index.html",
+          "hash": true,
+          "inject": true,
+          "minify": false,
+          "showErrors": true,
+          "template": "index.html",
+          "title": "Webpack App",
+          "xhtml": false,
+        },
+      },
+    ],
+    "publicPath": "/",
+  },
+  "plugins": Array [
+    NoErrorsPlugin {},
+  ],
+  "resolve": Object {
+    "modules": Array [],
+  },
+}
+`;
