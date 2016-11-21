@@ -12,6 +12,7 @@ export const neatoConfig: NeatoConfigType = {
   options: {
     ...defaultOptions
   },
+  optimize: false,
   neatoPath: path.join(__dirname, '../'),
   projectPath: process.env.NEATO_LINK
     ? process.cwd()

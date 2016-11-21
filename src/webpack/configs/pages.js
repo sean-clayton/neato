@@ -2,6 +2,7 @@
 
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { optimize } from 'webpack'
+import path from 'path'
 
 export default (neatoConfig: NeatoConfigType): Object => {
   const chunks = ['shared', 'vendor', 'webpack']
@@ -43,7 +44,10 @@ export default (neatoConfig: NeatoConfigType): Object => {
     ? new Error('Could not find page. Did you forget to set the `pages` option in your neato.config.js file?')
     : {
       output: {
-        publicPath: '/'
+        publicPath: '/',
+        path: path.join(neatoConfig.projectPath, 'dist'),
+        filename: neatoConfig.optimize ? '[name]-[chunkhash].js' : '[name]-[hash].js',
+        chunkFilename: neatoConfig.optimize ? '[name]-[chunkhash].chunk.js' : '[name]-[hash].chunk.js'
       },
       plugins: configurePlugins(),
       entry

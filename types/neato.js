@@ -10,5 +10,6 @@ export type NeatoOptionsType = {
 export type NeatoConfigType = {
   options: NeatoOptionsType,
   neatoPath: string,
-  projectPath: string
+  projectPath: string,
+  optimize: boolean
 }

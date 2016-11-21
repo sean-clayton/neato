@@ -6,6 +6,9 @@ Object {
     "vendor": Array [],
   },
   "output": Object {
+    "chunkFilename": "[name]-[hash].chunk.js",
+    "filename": "[name]-[hash].js",
+    "path": "/test/project/path/dist",
     "publicPath": "/",
   },
   "plugins": Array [

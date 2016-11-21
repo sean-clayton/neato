@@ -5,6 +5,8 @@ import webpackConfig from './webpack'
 describe('webpack', () => {
   it('Creates a webpack config object', () => {
     const neatoConfigMock = {
+      neatoPath: '/test/neato/path',
+      projectPath: '/test/project/path',
       options: {
         port: 3000,
         pages: ['index']
@@ -15,6 +17,8 @@ describe('webpack', () => {
 
   it('Accepts a custom config', () => {
     const neatoConfigMock = {
+      neatoPath: '/test/neato/path',
+      projectPath: '/test/project/path',
       options: {
         port: 3000,
         pages: ['index'],
