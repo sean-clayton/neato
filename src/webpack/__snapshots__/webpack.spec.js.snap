@@ -12,10 +12,24 @@ Object {
     "rules": Array [
       Object {
         "include": Array [
-          "/test/project/path/src",
+          "/test/project/path/src/styles",
+          "/test/project/path/node_modules",
         ],
-        "test": /\.(jsx?|es6)$/,
-        "use": "babel-loader",
+        "test": /(\.postcss|\.pcss|\.css)$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "sourceMaps": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+        ],
       },
       Object {
         "exclude": "/test/project/path/src/styles",
@@ -41,24 +55,14 @@ Object {
       },
       Object {
         "include": Array [
-          "/test/project/path/src/styles",
-          "/test/project/path/node_modules",
+          "/test/project/path/src",
         ],
-        "test": /(\.postcss|\.pcss|\.css)$/,
-        "use": Array [
-          Object {
-            "loader": "style-loader",
-          },
-          Object {
-            "loader": "css-loader",
-            "options": Object {
-              "sourceMaps": true,
-            },
-          },
-          Object {
-            "loader": "postcss-loader",
-          },
-        ],
+        "test": /\.(jsx?|es6)$/,
+        "use": "babel-loader",
+      },
+      Object {
+        "test": /\.json$/,
+        "use": "json-loader",
       },
     ],
   },
@@ -99,10 +103,24 @@ Object {
     "rules": Array [
       Object {
         "include": Array [
-          "/test/project/path/src",
+          "/test/project/path/src/styles",
+          "/test/project/path/node_modules",
         ],
-        "test": /\.(jsx?|es6)$/,
-        "use": "babel-loader",
+        "test": /(\.postcss|\.pcss|\.css)$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "sourceMaps": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+        ],
       },
       Object {
         "exclude": "/test/project/path/src/styles",
@@ -128,24 +146,14 @@ Object {
       },
       Object {
         "include": Array [
-          "/test/project/path/src/styles",
-          "/test/project/path/node_modules",
+          "/test/project/path/src",
         ],
-        "test": /(\.postcss|\.pcss|\.css)$/,
-        "use": Array [
-          Object {
-            "loader": "style-loader",
-          },
-          Object {
-            "loader": "css-loader",
-            "options": Object {
-              "sourceMaps": true,
-            },
-          },
-          Object {
-            "loader": "postcss-loader",
-          },
-        ],
+        "test": /\.(jsx?|es6)$/,
+        "use": "babel-loader",
+      },
+      Object {
+        "test": /\.json$/,
+        "use": "json-loader",
       },
     ],
   },
