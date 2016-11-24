@@ -2,13 +2,15 @@
 
 import base from './base'
 import pages from './pages'
-import babel from './babel'
+import js from './babel'
+import styles from './postcss'
 
 export default (neatoConfig: NeatoConfigType) => [
   ...[
     base,
     pages,
-    babel
+    js,
+    styles
   ].map((configFunction: Function): Object => configFunction(neatoConfig)),
   neatoConfig.options.webpack || {}
 ]
