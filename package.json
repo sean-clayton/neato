@@ -1,8 +1,8 @@
 {
   "name": "neato",
   "version": "2.0.0",
-  "main": "index.js",
-  "esnext:main": "index.js",
+  "main": "lib/index.js",
+  "esnext:main": "src/index.js",
   "repository": {
     "url": "https://gitlab.com/seanclayton/neato",
     "type": "git"
