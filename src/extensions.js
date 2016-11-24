@@ -6,7 +6,7 @@ export default {
   },
   test: {
     styles: /(\.postcss|\.pcss|\.css)$/,
-    image: /\.(png|jpg|jpeg|gif|svg)$/,
+    file: /\.(png|jpg|jpeg|gif|svg|txt)$/,
     javascript: /\.(jsx?|es6)$/,
     json: /\.json$/
   }
