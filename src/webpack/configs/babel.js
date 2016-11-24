@@ -1,7 +1,7 @@
 // @flow
 
 import path from 'path'
-import { HotModuleReplacementPlugin } from 'webpack'
+import { HotModuleReplacementPlugin, NamedModulesPlugin } from 'webpack'
 import extensions from 'extensions'
 
 export default (neatoConfig: NeatoConfigType): Object => ({
@@ -9,7 +9,10 @@ export default (neatoConfig: NeatoConfigType): Object => ({
     babelrc: path.join(neatoConfig.projectPath)
   },
 
-  plugins: neatoConfig.action === 'DEV' ? [new HotModuleReplacementPlugin()] : [],
+  plugins: neatoConfig.action === 'DEV' ? [
+    new HotModuleReplacementPlugin(),
+    new NamedModulesPlugin()
+  ] : [],
 
   resolve: {
     extensions: extensions.list.javascript

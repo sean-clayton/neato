@@ -1,0 +1,21 @@
+exports[`dev server Generates the correct entry point 1`] = `
+Object {
+  "index": Array [
+    "/home/sean/code/neato/node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:3000",
+    "webpack/hot/only-dev-server",
+    "./index",
+  ],
+  "other-page": Array [
+    "/home/sean/code/neato/node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:3000",
+    "webpack/hot/only-dev-server",
+    "./other-page",
+  ],
+  "vendor": Array [
+    "/home/sean/code/neato/node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:3000",
+    "webpack/hot/only-dev-server",
+    "a",
+    "b",
+    "c",
+  ],
+}
+`;

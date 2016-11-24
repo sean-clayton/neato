@@ -1,26 +1,41 @@
 // @flow
 
 import program from 'commander'
-import { version } from '../../package.json'
+import neato, { neatoConfig } from '../index'
+import actions from '../actions'
 
 program
-  .version(version)
+  .version(neato.version)
+
+const actionGenerator = (action: 'BUILD' | 'DEV' | 'INIT' | 'LINT'): Function => () => {
+  const options = {
+    ...neatoConfig,
+    action
+  }
+
+  neato.run(options).then(() => process.exit(0), () => process.exit(1))
+}
 
 program
   .command('init')
   .description('Install Neato in the current folder')
-  .action(() => { console.log('Did the thing!') })
+  .action(actionGenerator(actions.init))
 
 program
   .command('dev')
   .description('Runs the Neato dev suite')
-  .action(() => { console.log('Running dev suite!') })
+  .action(actionGenerator(actions.dev))
+
+program
+  .command('dev')
+  .description('Runs a linter on your project')
+  .action(actionGenerator(actions.lint))
 
 program
   .command('build')
   .description('Compiles your project')
   .option('-O, --optimize', 'Optimize the build')
-  .action(() => { console.log('Building app!') })
+  .action(actionGenerator(actions.build))
 
 export default (argv: string[] = ['-h']) => {
   try {

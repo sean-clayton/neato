@@ -19,6 +19,9 @@ Object {
       "fullBuildTimeout": 200,
       "multiStep": undefined,
     },
+    NamedModulesPlugin {
+      "options": Object {},
+    },
   ],
   "resolve": Object {
     "extensions": Array [

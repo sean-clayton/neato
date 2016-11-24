@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "main": "lib/index.js",
   "esnext:main": "src/index.js",
+  "bin": {
+    "neato": "bin/neato.js"
+  },
   "repository": {
     "url": "https://gitlab.com/seanclayton/neato",
     "type": "git"

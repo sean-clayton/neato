@@ -3,7 +3,7 @@
 import babel from './babel'
 
 describe('babel config', () => {
-  it('Generates a babel-loader config', () => {
+  xit('Generates a babel-loader config', () => {
     const neatoMock = {
       neatoPath: '/test/neato/path',
       projectPath: '/test/project/path',
