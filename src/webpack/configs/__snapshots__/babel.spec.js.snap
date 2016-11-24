@@ -1,0 +1,31 @@
+exports[`babel config Generates a babel-loader config 1`] = `
+Object {
+  "babel": Object {
+    "babelrc": "/test/project/path",
+  },
+  "module": Object {
+    "rules": Array [
+      Object {
+        "include": Array [
+          "/test/project/path/src",
+        ],
+        "test": /\.(jsx?|es6)$/,
+        "use": "babel-loader",
+      },
+    ],
+  },
+  "plugins": Array [
+    HotModuleReplacementPlugin {
+      "fullBuildTimeout": 200,
+      "multiStep": undefined,
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".js",
+      ".jsx",
+      ".es6",
+    ],
+  },
+}
+`;

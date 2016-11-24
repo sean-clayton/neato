@@ -1,9 +1,23 @@
 exports[`webpack Accepts a custom config 1`] = `
 Object {
+  "babel": Object {
+    "babelrc": "/test/project/path",
+  },
   "devtool": "source-map",
   "entry": Object {
     "index": "./index",
     "vendor": Array [],
+  },
+  "module": Object {
+    "rules": Array [
+      Object {
+        "include": Array [
+          "/test/project/path/src",
+        ],
+        "test": /\.(jsx?|es6)$/,
+        "use": "babel-loader",
+      },
+    ],
   },
   "output": Object {
     "chunkFilename": "[name]-[hash].chunk.js",
@@ -11,40 +25,13 @@ Object {
     "path": "/test/project/path/dist",
     "publicPath": "https://cdn.com/",
   },
-  "plugins": Array [
-    NoErrorsPlugin {},
-    HtmlWebpackPlugin {
-      "options": Object {
-        "cache": true,
-        "chunks": "all",
-        "compile": true,
-        "excludeChunks": Array [],
-        "favicon": false,
-        "filename": "index.html",
-        "hash": true,
-        "inject": true,
-        "minify": false,
-        "showErrors": true,
-        "template": "index.html",
-        "title": "Webpack App",
-        "xhtml": false,
-      },
-    },
-    CommonsChunkPlugin {
-      "async": undefined,
-      "chunkNames": Array [
-        "shared",
-        "vendor",
-        "webpack",
-      ],
-      "filenameTemplate": undefined,
-      "ident": "/home/sean/code/neato/node_modules/webpack/lib/optimize/CommonsChunkPlugin.js1",
-      "minChunks": undefined,
-      "minSize": undefined,
-      "selectedChunks": undefined,
-    },
-  ],
+  "plugins": Array [],
   "resolve": Object {
+    "extensions": Array [
+      ".js",
+      ".jsx",
+      ".es6",
+    ],
     "modules": Array [],
   },
 }
@@ -52,10 +39,24 @@ Object {
 
 exports[`webpack Creates a webpack config object 1`] = `
 Object {
+  "babel": Object {
+    "babelrc": "/test/project/path",
+  },
   "devtool": "source-map",
   "entry": Object {
     "index": "./index",
     "vendor": Array [],
+  },
+  "module": Object {
+    "rules": Array [
+      Object {
+        "include": Array [
+          "/test/project/path/src",
+        ],
+        "test": /\.(jsx?|es6)$/,
+        "use": "babel-loader",
+      },
+    ],
   },
   "output": Object {
     "chunkFilename": "[name]-[hash].chunk.js",
@@ -63,40 +64,13 @@ Object {
     "path": "/test/project/path/dist",
     "publicPath": "/",
   },
-  "plugins": Array [
-    NoErrorsPlugin {},
-    HtmlWebpackPlugin {
-      "options": Object {
-        "cache": true,
-        "chunks": "all",
-        "compile": true,
-        "excludeChunks": Array [],
-        "favicon": false,
-        "filename": "index.html",
-        "hash": true,
-        "inject": true,
-        "minify": false,
-        "showErrors": true,
-        "template": "index.html",
-        "title": "Webpack App",
-        "xhtml": false,
-      },
-    },
-    CommonsChunkPlugin {
-      "async": undefined,
-      "chunkNames": Array [
-        "shared",
-        "vendor",
-        "webpack",
-      ],
-      "filenameTemplate": undefined,
-      "ident": "/home/sean/code/neato/node_modules/webpack/lib/optimize/CommonsChunkPlugin.js0",
-      "minChunks": undefined,
-      "minSize": undefined,
-      "selectedChunks": undefined,
-    },
-  ],
+  "plugins": Array [],
   "resolve": Object {
+    "extensions": Array [
+      ".js",
+      ".jsx",
+      ".es6",
+    ],
     "modules": Array [],
   },
 }

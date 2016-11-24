@@ -11,5 +11,6 @@ export type NeatoConfigType = {
   options: NeatoOptionsType,
   neatoPath: string,
   projectPath: string,
-  optimize: boolean
+  optimize: boolean,
+  action?: 'BUILD' | 'DEV' | 'LINT' | 'INSTALL'
 }
