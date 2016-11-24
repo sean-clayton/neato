@@ -54,6 +54,7 @@
     "babel-preset-env": "^0.0.8",
     "babel-preset-stage-2": "^6.18.0",
     "babel-register": "^6.18.0",
+    "documentation": "4.0.0-beta15",
     "eslint": "^3.10.2",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-flowtype": "^2.25.0",
