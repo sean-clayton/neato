@@ -1,0 +1,53 @@
+exports[`postcss config Generates a postcss-loader config 1`] = `
+Object {
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": "/test/project/path/src/styles",
+        "include": "/test/project/path/src",
+        "test": /(\.postcss|\.pcss|\.css)$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "importLoaders": 1,
+              "localIdentName": "[path][name]_[local]__[hash:base64:5]",
+              "modules": true,
+              "sourceMaps": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+        ],
+      },
+      Object {
+        "include": Array [
+          "/test/project/path/src/styles",
+          "/test/project/path/node_modules",
+        ],
+        "test": /(\.postcss|\.pcss|\.css)$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "sourceMaps": true,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+        ],
+      },
+    ],
+  },
+  "plugins": Array [],
+  "postcss": [Function],
+}
+`;
