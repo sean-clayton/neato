@@ -1,7 +1,7 @@
 // @flow
 
 import path from 'path'
-import extensions from 'extensions'
+import extensions from '../../extensions'
 
 export default (neato: NeatoConfigType) => ({
   module: {

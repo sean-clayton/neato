@@ -5,7 +5,7 @@ import smartImport from 'postcss-smart-import'
 import precss from 'precss'
 import postCSSFlexbugsFixes from 'postcss-flexbugs-fixes'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import extensions from 'extensions'
+import extensions from '../../extensions'
 
 export default (neato: NeatoConfigType): Object => {
   type LoaderType = {

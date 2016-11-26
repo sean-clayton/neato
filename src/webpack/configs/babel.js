@@ -2,7 +2,7 @@
 
 import path from 'path'
 import { HotModuleReplacementPlugin, NamedModulesPlugin } from 'webpack'
-import extensions from 'extensions'
+import extensions from '../../extensions'
 
 export default (neatoConfig: NeatoConfigType): Object => ({
   babel: {
