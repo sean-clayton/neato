@@ -2,16 +2,21 @@
 
 import program from 'commander'
 import neato, { neatoConfig } from '../index'
+import { version } from '../../package.json'
+import { debug } from 'helpers/log'
 import actions from '../actions'
 
 program
-  .version(neato.version)
+  .version(version)
 
-const actionGenerator = (action: 'BUILD' | 'DEV' | 'INIT' | 'LINT'): Function => () => {
+const actionGenerator = (action: 'BUILD' | 'DEV' | 'INIT' | 'LINT', cliOptions): Function => () => {
   const options = {
     ...neatoConfig,
-    action
+    action,
+    optimize: cliOptions !== undefined && cliOptions.optimize
   }
+
+  debug(neatoConfig, options.projectPath)
 
   neato.run(options).then(() => process.exit(0), () => process.exit(1))
 }
@@ -27,7 +32,7 @@ program
   .action(actionGenerator(actions.dev))
 
 program
-  .command('dev')
+  .command('lint')
   .description('Runs a linter on your project')
   .action(actionGenerator(actions.lint))
 
